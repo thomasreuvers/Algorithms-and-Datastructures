@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log", "Log\Log.csproj", "{6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileReader", "FileReader\FileReader.csproj", "{43031641-4D10-4C80-A494-921009D4380C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "DataStructures\DataStructures.csproj", "{DC5ABB54-E6D8-4898-8E22-BF3FDCC72AB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{43031641-4D10-4C80-A494-921009D4380C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43031641-4D10-4C80-A494-921009D4380C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43031641-4D10-4C80-A494-921009D4380C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC5ABB54-E6D8-4898-8E22-BF3FDCC72AB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC5ABB54-E6D8-4898-8E22-BF3FDCC72AB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC5ABB54-E6D8-4898-8E22-BF3FDCC72AB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC5ABB54-E6D8-4898-8E22-BF3FDCC72AB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
