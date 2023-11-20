@@ -4,6 +4,9 @@
 # Rider ignored files
 /contentModel.xml
 /projectSettingsUpdater.xml
+/encodings.xml
+/indexLayout.xml
+/vcs.xml
 /.idea.Algorithms-and-Datastructures.iml
 /modules.xml
 # Editor-based HTTP Client requests
