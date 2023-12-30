@@ -10,13 +10,5 @@ public static class Program
 	{
 		var jsonFileReader = new JsonFileReader();
 		var data = await jsonFileReader.ReadFromFile<BaseModel>("data_sorteren.json");
-
-		var dynamicArray = new DynamicArray();
-		foreach (var item in data.AscendingList)
-		{
-			dynamicArray.Add(item);
-		}
-		
-		Console.WriteLine("Reach");
 	}
 }
