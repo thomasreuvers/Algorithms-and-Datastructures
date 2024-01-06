@@ -10,7 +10,7 @@ public class JsonFileReader
 		WriteIndented = true
 	};
 	
-	public async Task<T> ReadFromFile<T>(string fileName)
+	public async Task<T> ReadFromFileAsync<T>(string fileName)
 	{
 		try
 		{
