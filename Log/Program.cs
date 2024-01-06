@@ -9,6 +9,6 @@ public static class Program
 	public static async Task Main(string[] args)
 	{
 		var jsonFileReader = new JsonFileReader();
-		var data = await jsonFileReader.ReadFromFile<BaseModel>("data_sorteren.json");
+		var data = await jsonFileReader.ReadFromFile<SortingDataModel>("data_sorteren.json");
 	}
 }
