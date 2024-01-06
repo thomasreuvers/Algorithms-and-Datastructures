@@ -123,4 +123,43 @@ public class DynamicArrayTests
 		// Assert
 		Assert.That(index, Is.EqualTo(1));
 	}
+
+	[Test]
+	public void Contains_CheckExistingElementObject_ReturnsTrue()
+	{
+		// Arrange
+		var dynamicArray = new DynamicArray<Pizza>();
+		
+		// Bake the pizza's
+		var pepperoni = new Pizza
+		{
+			PizzaName = "Pepperoni",
+			NumberOfSlices = 6
+		};
+		
+		var hawaiian = new Pizza
+		{
+			PizzaName = "Hawaiian",
+			NumberOfSlices = 7
+		};
+		
+		var margherita = new Pizza
+		{
+			PizzaName = "Margherita",
+			NumberOfSlices = 10
+		};
+		
+		dynamicArray.Add(pepperoni);
+		dynamicArray.Add(hawaiian);
+		dynamicArray.Add(margherita);
+
+		// Act & Assert
+		Assert.That(dynamicArray.Contains(hawaiian), Is.True);
+	}
+
+	private class Pizza
+	{
+		public string PizzaName { get; set; } = string.Empty;
+		public int NumberOfSlices { get; set; }
+	}
 }
