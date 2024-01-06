@@ -4,7 +4,13 @@ namespace FileReader;
 
 public class JsonFileReader
 {
-	public async Task<T> ReadFromFile<T>(string fileName)
+	private readonly JsonSerializerOptions _options = new()
+	{
+		PropertyNameCaseInsensitive = true,
+		WriteIndented = true
+	};
+	
+	public async Task<T> ReadFromFileAsync<T>(string fileName)
 	{
 		try
 		{
@@ -12,13 +18,7 @@ public class JsonFileReader
 			
 			await using var fs = File.OpenRead(filePath);
 
-			var options = new JsonSerializerOptions
-			{
-				PropertyNameCaseInsensitive = true,
-				WriteIndented = true
-			};
-
-			var data = await JsonSerializer.DeserializeAsync<T>(fs, options);
+			var data = await JsonSerializer.DeserializeAsync<T>(fs, _options);
 			return data ?? throw new InvalidOperationException("empty dataset");
 		}
 		catch (FileNotFoundException ex)
