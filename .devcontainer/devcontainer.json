@@ -2,14 +2,17 @@
   "name": "ADP Codespace",
   "image": "mcr.microsoft.com/dotnet/sdk:8.0",
   "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers/features/github-cli:1": {
       "version": "2"
     },
-    "ghcr.io/devcontainers/features/dotnet:2": {
-      "version": "none",
-      "dotnetRuntimeVersions": "7.0"
-    }
+    "ghcr.io/devcontainers/features/powershell:1": {
+      "version": "latest"
+    },
+    "ghcr.io/azure/azure-dev/azd:0": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {}
   },
   "postCreateCommand": "dotnet restore",
   "hostRequirements": {
@@ -22,14 +25,14 @@
   },
   "customizations": {
     "vscode": {
-        "extensions": [
-          "ms-vscode.vscode-node-azure-pack",
-          "GitHub.copilot",
-          "GitHub.vscode-github-actions",
-          "ms-dotnettools.vscode-dotnet-runtime",
-          "ms-dotnettools.csdevkit",
-          "ms-dotnetools.csharp"
-        ]
+      "extensions": [
+        "ms-vscode.vscode-node-azure-pack",
+        "GitHub.copilot",
+        "GitHub.vscode-github-actions",
+        "ms-dotnettools.vscode-dotnet-runtime",
+        "ms-dotnettools.csdevkit",
+        "ms-dotnetools.csharp"
+      ]
     }
   }
 }
