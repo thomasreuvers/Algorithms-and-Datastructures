@@ -2,7 +2,7 @@ namespace Algorithms;
 
 public class InsertionSort
 {
-	public static void Sort<T>(IEnumerable<T> array) where T: IComparable<T>
+	public static T[] Sort<T>(IEnumerable<T> array)
 	{
 		var sortedArray = array.ToArray();
 		
@@ -10,11 +10,19 @@ public class InsertionSort
 		{
 			var j = i;
 			
-			while (j > 0 && sortedArray[j].CompareTo(sortedArray[j - 1]) < 0)
+			// while (j > 0 && sortedArray[j].CompareTo(sortedArray[j - 1]) < 0)
+			// {
+			// 	(sortedArray[j], sortedArray[j - 1]) = (sortedArray[j - 1], sortedArray[j]);
+			// 	j--;
+			// }
+			
+			while (j > 0 && Comparer<T>.Default.Compare(sortedArray[i], sortedArray[j - 1]) < 0)
 			{
 				(sortedArray[j], sortedArray[j - 1]) = (sortedArray[j - 1], sortedArray[j]);
 				j--;
 			}
 		}
+
+		return sortedArray;
 	}
 }
