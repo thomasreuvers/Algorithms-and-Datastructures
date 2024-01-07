@@ -2,7 +2,7 @@ namespace Algorithms;
 
 public class BinarySearch
 {
-	public static int Search<T>(T[] array, T value) where T : IComparable<T>
+	public static int Search<T>(T[] array, T value)
 	{
 		var left = 0;
 		var right = array.Length - 1;
@@ -10,7 +10,7 @@ public class BinarySearch
 		while (left <= right)
 		{
 			var middle = (left + right) / 2;
-			var comparison = value.CompareTo(array[middle]);
+			var comparison = Comparer<T>.Default.Compare(value, array[middle]);
 
 			switch (comparison)
 			{

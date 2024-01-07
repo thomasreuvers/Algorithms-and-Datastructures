@@ -2,7 +2,7 @@ namespace Algorithms;
 
 public class SelectionSort
 {
-	public static void Sort<T>(IEnumerable<T> array) where T : IComparable<T>
+	public static T[] Sort<T>(IEnumerable<T> array)
 	{
 		var sortedArray = array.ToArray();
 
@@ -12,7 +12,7 @@ public class SelectionSort
 
 			for (var j = i + 1; j < sortedArray.Length; j++)
 			{
-				if (sortedArray[j].CompareTo(sortedArray[minIndex]) < 0)
+				if (Comparer<T>.Default.Compare(sortedArray[j],sortedArray[minIndex]) < 0)
 				{
 					minIndex = j;
 				}
@@ -23,5 +23,7 @@ public class SelectionSort
 				(sortedArray[i], sortedArray[minIndex]) = (sortedArray[minIndex], sortedArray[i]);
 			}
 		}
+
+		return sortedArray;
 	}
 }

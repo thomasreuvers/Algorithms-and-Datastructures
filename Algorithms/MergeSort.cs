@@ -2,13 +2,14 @@ namespace Algorithms;
 
 public class MergeSort
 {
-	public static void Sort<T>(T[] array) where T : IComparable<T>
+	public static T[] Sort<T>(T[] array)
 	{
 		var sortedArray = new T[array.Length];
 		Sort(array, sortedArray, 0, array.Length - 1);
+		return sortedArray;
 	}
 	
-	private static void Sort<T>(T[] array, T[] sortedArray, int left, int right) where T : IComparable<T>
+	private static void Sort<T>(T[] array, T[] sortedArray, int left, int right)
 	{
 		if (left >= right) return;
 		
@@ -18,7 +19,7 @@ public class MergeSort
 		Merge(array, sortedArray, left, middle, right);
 	}
 	
-	private static void Merge<T>(IList<T> array, IList<T> sortedArray, int left, int middle, int right) where T : IComparable<T>
+	private static void Merge<T>(T[] array, T[] sortedArray, int left, int middle, int right)
 	{
 		var leftIndex = left;
 		var rightIndex = middle + 1;
@@ -26,7 +27,7 @@ public class MergeSort
 		
 		while (leftIndex <= middle && rightIndex <= right)
 		{
-			if (array[leftIndex].CompareTo(array[rightIndex]) <= 0)
+			if (Comparer<T>.Default.Compare(array[leftIndex], array[rightIndex]) <= 0)
 			{
 				sortedArray[sortedIndex] = array[leftIndex];
 				leftIndex++;

@@ -26,10 +26,10 @@ public class SortingDataModel
 	public required object[] EmptyList { get; set; }
 	
 	[JsonPropertyName("lijst_null_1")]
-	public required object?[] NullList { get; set; }
+	public required int?[] NullList { get; set; }
 	
 	[JsonPropertyName("lijst_null_3")] 
-	public required object?[] MultiTypeNullList { get; set; }
+	public required int?[] MultiTypeNullList { get; set; }
 	
 	[JsonPropertyName("lijst_onsorteerbaar_3")]
 	public required object[] UnsortableList { get; set; }
