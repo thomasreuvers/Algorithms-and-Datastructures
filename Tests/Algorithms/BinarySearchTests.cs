@@ -13,7 +13,7 @@ public class BinarySearchTests
 	public async Task Setup()
 	{
 		var fileReader = new JsonFileReader();
-		_data = await fileReader.ReadFromFileAsync<SortingDataModel>("data_sorteren.json");
+		_data = await fileReader.ReadFromFileAsync<SortingDataModel>("dataset_sorteren.json");
 	}
 	
 	[Test]
