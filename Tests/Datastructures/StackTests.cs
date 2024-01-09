@@ -1,3 +1,7 @@
+using DataStructures;
+using FileReader;
+using FileReader.Models;
+
 namespace Tests.Datastructures;
 
 [TestFixture]
@@ -86,5 +90,23 @@ public class StackTests
 		_stack.Push(2);
 
 		Assert.That(_stack.Size(), Is.EqualTo(2));
+	}
+	
+	[Test]
+	public async Task Can_Read_DataSet()
+	{
+		// Arrange
+		var fileReader = new JsonFileReader();
+		var data = await fileReader.ReadFromFileAsync<SortingDataModel>("dataset_sorteren.json");
+		var stack = new DataStructures.Stack<int>(data.AscendingList.Length);
+		
+		// Act
+		foreach (var item in data.AscendingList)
+		{
+			stack.Push(item);
+		}
+		
+		// Assert
+		Assert.That(stack.Size(), Is.EqualTo(data.AscendingList.Length));
 	}
 }

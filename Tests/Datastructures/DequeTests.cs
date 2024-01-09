@@ -1,4 +1,6 @@
 using DataStructures;
+using FileReader;
+using FileReader.Models;
 
 namespace Tests.Datastructures;
 
@@ -71,5 +73,23 @@ public class DequeTests
 
 		// Assert
 		Assert.That(size, Is.EqualTo(2));
+	}
+	
+	[Test]
+	public async Task Can_Read_DataSet()
+	{
+		// Arrange
+		var fileReader = new JsonFileReader();
+		var data = await fileReader.ReadFromFileAsync<SortingDataModel>("dataset_sorteren.json");
+		var deque = new Deque<int>(data.AscendingList.Length);
+		
+		// Act
+		foreach (var item in data.AscendingList)
+		{
+			deque.InsertRight(item);
+		}
+		
+		// Assert
+		Assert.That(deque.Size(), Is.EqualTo(data.AscendingList.Length));
 	}
 }

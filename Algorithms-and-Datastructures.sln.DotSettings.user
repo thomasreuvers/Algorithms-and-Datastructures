@@ -1,15 +1,4 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=55b5c58f_002Df01b_002D429e_002Db89a_002Def9dea260233/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="InsertLeft_WhenDequeIsEmpty_InsertsElementAtFront" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;Or&gt;
-    &lt;ProjectFolder&gt;6BD37306-93B9-4CF1-98D1-5CA66E01F960/d:Datastructures&lt;/ProjectFolder&gt;
-    &lt;TestAncestor&gt;
-      &lt;TestId&gt;NUnit3x::6BD37306-93B9-4CF1-98D1-5CA66E01F960::net8.0::Tests.Algorithms.Algo.Test_BinarySearch&lt;/TestId&gt;
-      &lt;TestId&gt;NUnit3x::6BD37306-93B9-4CF1-98D1-5CA66E01F960::net8.0::Tests.Algorithms.BinarySearchTests&lt;/TestId&gt;
-      &lt;TestId&gt;NUnit3x::6BD37306-93B9-4CF1-98D1-5CA66E01F960::net8.0::Tests.Algorithms.MergeSortTests.Sort_UnsortableArray_ThrowsArgumentException&lt;/TestId&gt;
-      &lt;TestId&gt;NUnit3x::6BD37306-93B9-4CF1-98D1-5CA66E01F960::net8.0::Tests.Algorithms.MergeSortTests&lt;/TestId&gt;
-      &lt;TestId&gt;NUnit3x::6BD37306-93B9-4CF1-98D1-5CA66E01F960::net8.0::Tests.Algorithms.InsertionSortTests&lt;/TestId&gt;
-      &lt;TestId&gt;NUnit3x::6BD37306-93B9-4CF1-98D1-5CA66E01F960::net8.0::Tests.Algorithms.QuickSortTests&lt;/TestId&gt;
-      &lt;TestId&gt;NUnit3x::6BD37306-93B9-4CF1-98D1-5CA66E01F960::net8.0::Tests.Algorithms.SelectionSortTests&lt;/TestId&gt;
-    &lt;/TestAncestor&gt;
-  &lt;/Or&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f0352238_002D2896_002D49f6_002D934d_002D9f224c9fadfa/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Can_Read_DataSet" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;ProjectFolder&gt;6BD37306-93B9-4CF1-98D1-5CA66E01F960/d:Datastructures&lt;/ProjectFolder&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

@@ -1,4 +1,6 @@
 using DataStructures;
+using FileReader;
+using FileReader.Models;
 
 namespace Tests.Datastructures;
 
@@ -78,5 +80,23 @@ public class PriorityQueueTests
 
 		// Assert
 		Assert.That(polled, Is.EqualTo("Apple"));
+	}
+	
+	[Test]
+	public async Task Can_Read_DataSet()
+	{
+		// Arrange
+		var fileReader = new JsonFileReader();
+		var data = await fileReader.ReadFromFileAsync<SortingDataModel>("dataset_sorteren.json");
+		var priorityQueue = new PriorityQueue<int>((x, y) => x.CompareTo(y));
+		
+		// Act
+		foreach (var item in data.AscendingList)
+		{
+			priorityQueue.Add(item);
+		}
+
+		// Assert
+		Assert.That(priorityQueue.Peek(), Is.EqualTo(-100324));
 	}
 }
