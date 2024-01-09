@@ -8,10 +8,18 @@
 
 
     <ItemGroup>
-      <None Remove="Data\data_sorteren.json" />
-      <EmbeddedResource Include="Data\data_sorteren.json">
+      <None Remove="Data\dataset_sorteren.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Data\dataset_hashing.json" />
+      <EmbeddedResource Include="Data\dataset_hashing.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DataStructures\DataStructures.csproj" />
     </ItemGroup>
 
 
