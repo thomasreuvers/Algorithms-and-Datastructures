@@ -13,6 +13,6 @@ public abstract class BaseBenchmark
 	public async Task Setup()
 	{
 		var fileReader = new JsonFileReader();
-		Data = await fileReader.ReadFromFileAsync<SortingDataModel>("data_sorteren.json");
+		Data = await fileReader.ReadFromFileAsync<SortingDataModel>("dataset_sorteren.json");
 	}
 }
