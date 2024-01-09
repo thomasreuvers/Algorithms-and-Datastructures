@@ -33,7 +33,7 @@ public class PriorityQueue<T>(Func<T, T, int> comparer, int capacity = 10)
 
 		var item = _heap[0];
 		_heap[0] = _heap[_size - 1];
-		_heap[_size - 1] = default; // Set the last element to default value
+		_heap[_size - 1] = default;
 		_size--;
 
 		HeapifyDown();

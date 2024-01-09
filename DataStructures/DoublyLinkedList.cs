@@ -13,8 +13,7 @@ public class DoublyLinkedList<T>
 	private DoublyLinkedListNode<T>? _tail;
 
 	public int Count { get; private set; }
-
-	// Add element to the end of the list
+	
 	public void Add(T element)
 	{
 		var newNode = new DoublyLinkedListNode<T>(element);
@@ -34,7 +33,6 @@ public class DoublyLinkedList<T>
 		Count++;
 	}
 	
-	// Get element at specified index
 	public T Get(int index)
 	{
 		if (index < 0 || index >= Count)
@@ -51,8 +49,7 @@ public class DoublyLinkedList<T>
 
 		return current.Value;
 	}
-	
-	// Set element at specified index
+
 	public void Set(int index, T element)
 	{
 		if(index < 0 || index >= Count)
@@ -70,7 +67,6 @@ public class DoublyLinkedList<T>
 		current.Value = element;
 	}
 	
-	// Remove element at specified index
 	public void Remove(int index)
 	{
 		if (index < 0 || index >= Count)
@@ -106,7 +102,6 @@ public class DoublyLinkedList<T>
 		Count--;
 	}
 	
-	// Remove first occurrence of specified element
 	public void Remove(T element)
 	{
 		var current = _head;
@@ -141,7 +136,6 @@ public class DoublyLinkedList<T>
 		}
 	}
 	
-	// Check if element exists in the list
 	public bool Contains(T element)
 	{
 		var current = _head;
@@ -156,8 +150,7 @@ public class DoublyLinkedList<T>
 
 		return false;
 	}
-
-	// Find index of element
+	
 	public int IndexOf(T element)
 	{
 		var current = _head;

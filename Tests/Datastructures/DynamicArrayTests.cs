@@ -1,4 +1,6 @@
 using DataStructures;
+using FileReader;
+using FileReader.Models;
 
 namespace Tests.Datastructures;
 
@@ -122,6 +124,24 @@ public class DynamicArrayTests
 
 		// Assert
 		Assert.That(index, Is.EqualTo(1));
+	}
+	
+	[Test]
+	public async Task Can_Read_DataSet()
+	{
+		// Arrange
+		var fileReader = new JsonFileReader();
+		var data = await fileReader.ReadFromFileAsync<SortingDataModel>("dataset_sorteren.json");
+		var dynamicArray = new DynamicArray<int>();
+		
+		// Act
+		foreach (var item in data.AscendingList)
+		{
+			dynamicArray.Add(item);
+		}
+		
+		// Assert
+		Assert.That(dynamicArray.Size(), Is.EqualTo(data.AscendingList.Length));
 	}
 
 	[Test]

@@ -1,4 +1,6 @@
 using DataStructures;
+using FileReader;
+using FileReader.Models;
 
 namespace Tests.Datastructures;
 
@@ -178,5 +180,23 @@ public class DoublyLinkedListTests
 
 		// Act & Assert
 		Assert.That(list.IndexOf(20), Is.EqualTo(-1));
+	}
+	
+	[Test]
+	public async Task Can_Read_DataSet()
+	{
+		// Arrange
+		var fileReader = new JsonFileReader();
+		var data = await fileReader.ReadFromFileAsync<SortingDataModel>("dataset_sorteren.json");
+		var doublyLinkedList = new DoublyLinkedList<int>();
+		
+		// Act
+		foreach (var item in data.AscendingList)
+		{
+			doublyLinkedList.Add(item);
+		}
+		
+		// Assert
+		Assert.That(doublyLinkedList.Count, Is.EqualTo(data.AscendingList.Length));
 	}
 }
