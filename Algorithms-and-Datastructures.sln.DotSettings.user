@@ -1,5 +1,10 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=55b5c58f_002Df01b_002D429e_002Db89a_002Def9dea260233/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="InsertLeft_WhenDequeIsEmpty_InsertsElementAtFront" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3ac8ce3d_002D7498_002D4171_002Da71c_002D3160075fc45b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Can_Read_Json_Input" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::6BD37306-93B9-4CF1-98D1-5CA66E01F960::net8.0::Tests.Datastructures.HashTableTests.Can_Read_Json_Input&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=55b5c58f_002Df01b_002D429e_002Db89a_002Def9dea260233/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="InsertLeft_WhenDequeIsEmpty_InsertsElementAtFront" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;Or&gt;
     &lt;ProjectFolder&gt;6BD37306-93B9-4CF1-98D1-5CA66E01F960/d:Datastructures&lt;/ProjectFolder&gt;
     &lt;TestAncestor&gt;
@@ -12,4 +17,9 @@
       &lt;TestId&gt;NUnit3x::6BD37306-93B9-4CF1-98D1-5CA66E01F960::net8.0::Tests.Algorithms.SelectionSortTests&lt;/TestId&gt;
     &lt;/TestAncestor&gt;
   &lt;/Or&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=aa27ce95_002D15a6_002D48ab_002D9785_002D068ce9638222/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Can_Read_Json_Input #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::6BD37306-93B9-4CF1-98D1-5CA66E01F960::net8.0::Tests.Datastructures.HashTableTests&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
