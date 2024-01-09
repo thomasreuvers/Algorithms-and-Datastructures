@@ -9,6 +9,9 @@
 
     <ItemGroup>
       <None Remove="Data\dataset_sorteren.json" />
+        <EmbeddedResource Include="Data\dataset_sorteren.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
