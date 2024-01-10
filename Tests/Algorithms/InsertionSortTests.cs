@@ -30,7 +30,7 @@ public class InsertionSortTests
 		var sortedArray = InsertionSort.Sort(_data.EmptyList);
 		
 		// Assert
-		Assert.AreEqual(0, sortedArray.Length);
+		Assert.That(sortedArray.Length, Is.EqualTo(0));
 	}
 	
 	[Test]
@@ -40,7 +40,7 @@ public class InsertionSortTests
 		var sortedArray = InsertionSort.Sort(_data.NullList);
         
 		// Assert
-		Assert.AreEqual(null, sortedArray[0]);
+		Assert.That(sortedArray[0], Is.EqualTo(null));
 	}
 	
 	[Test]
@@ -53,6 +53,6 @@ public class InsertionSortTests
 		var sortedArray = InsertionSort.Sort(_data.MultiTypeNullList);
 		
 		// Assert
-		Assert.AreEqual(expectedSortedArray, sortedArray);
+		Assert.That(sortedArray, Is.EqualTo(expectedSortedArray));
 	}
 }
