@@ -12,17 +12,13 @@ public class QuickSort
 
 	private static void Sort<T>(IList<T> array, int left, int right)
 	{
-		while (true)
-		{
-			if (left >= right) return;
+		if (left >= right) return;
 
-			var pivot = Partition(array, left, right);
-			Sort(array, left, pivot - 1);
-			left = pivot + 1;
-		}
+		var pivot = Partition(array, left, right);
+		Sort(array, left, pivot - 1);
 	}
 
-	private static int Partition<T>(IList<T> array, int left, int right)
+	public static int Partition<T>(IList<T> array, int left, int right)
 	{
 		var pivot = array[right];
 		var i = left - 1;

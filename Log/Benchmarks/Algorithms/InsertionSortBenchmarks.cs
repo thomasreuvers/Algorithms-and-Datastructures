@@ -5,6 +5,11 @@ namespace Log.Benchmarks;
 
 public class InsertionSortBenchmarks : BaseBenchmark
 {
+	/* Optimizations for the Insertion Sort algorithm:
+	 * We can use a binary search to find the index where the element should be inserted.
+	 * We could use a temporary variable for swapping instead of using tuple deconstruction.
+	 */
+	
 	[Benchmark]
 	public int[] InsertionSort_LargeRandomList_Benchmark()
 	{

@@ -3,9 +3,9 @@ namespace DataStructures;
 public class Deque<T>(int capacity)
 {
 	private readonly T[] _dequeArray = new T[capacity];
-	private int _front = 0;
+	private int _front;
 	private int _rear = capacity - 1;
-	private int _count = 0;
+	private int _count;
 	
 	public void InsertLeft(T item)
 	{

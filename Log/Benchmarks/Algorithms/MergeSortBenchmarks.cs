@@ -6,6 +6,14 @@ namespace Log.Benchmarks;
 public class MergeSortBenchmarks : BaseBenchmark
 {
 	[Benchmark]
+	public void Merge_Benchmark()
+	{
+		var array = Data.RandomList;
+		var sortedArray = new int[array.Length];
+		MergeSort.Merge(array, sortedArray, 0, array.Length / 2, array.Length - 1);
+	}
+
+	[Benchmark]
 	public int[] MergeSort_LargeRandomList_Benchmark()
 	{
 		var sortedList = MergeSort.Sort(Data.LargeRandomList);

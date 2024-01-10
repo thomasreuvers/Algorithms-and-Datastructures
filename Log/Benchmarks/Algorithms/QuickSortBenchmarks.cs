@@ -6,6 +6,13 @@ namespace Log.Benchmarks;
 public class QuickSortBenchmarks : BaseBenchmark
 {
 	[Benchmark]
+	public int QuickSort_Partition_Benchmark()
+	{
+		var array = Data.RandomList;
+		return QuickSort.Partition(array, 0, array.Length - 1);
+	}
+	
+	[Benchmark]
 	public int[] QuickSort_LargeRandomList_Benchmark()
 	{
 		var sortedList = QuickSort.Sort(Data.LargeRandomList);
