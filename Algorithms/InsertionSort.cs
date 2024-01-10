@@ -4,7 +4,7 @@ public class InsertionSort
 {
 	public static T[] Sort<T>(T[] array)
 	{
-		var sortedArray = new T[array.Length];
+		var sortedArray = array.ToArray();
 		for (var i = 1; i < sortedArray.Length; i++)
 		{
 			var j = i;
