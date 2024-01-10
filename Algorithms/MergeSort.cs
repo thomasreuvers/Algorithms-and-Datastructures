@@ -19,7 +19,7 @@ public class MergeSort
 		Merge(array, sortedArray, left, middle, right);
 	}
 	
-	private static void Merge<T>(T[] array, T[] sortedArray, int left, int middle, int right)
+	public static void Merge<T>(T[] array, T[] sortedArray, int left, int middle, int right)
 	{
 		var leftIndex = left;
 		var rightIndex = middle + 1;

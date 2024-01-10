@@ -144,6 +144,7 @@ public class DynamicArrayTests
 		Assert.That(dynamicArray.Size(), Is.EqualTo(data.AscendingList.Length));
 	}
 
+	// Would need to override the Equals method in the Pizza class OR use a custom comparer
 	[Test]
 	public void Contains_CheckExistingElementObject_ReturnsTrue()
 	{
@@ -158,6 +159,12 @@ public class DynamicArrayTests
 		};
 		
 		var hawaiian = new Pizza
+		{
+			PizzaName = "Hawaiian",
+			NumberOfSlices = 7
+		};
+		
+		var hawaiian2 = new Pizza
 		{
 			PizzaName = "Hawaiian",
 			NumberOfSlices = 7

@@ -17,14 +17,23 @@ public class DynamicArray<T>
 	{
 		if (_size == _capacity)
 		{
-			var newArray = new T[_capacity * 2];
-			Array.Copy(_array, newArray, _capacity);
-			_array = newArray;
-			_capacity *= 2;
+			Resize();
 		}
         
 		_array[_size] = element;
 		_size++;
+	}
+
+	private void Resize()
+	{
+		_capacity *= 2;
+		var newArray = new T[_capacity];
+		for (var i = 0; i < _size; i++)
+		{
+			newArray[i] = _array[i];
+		}
+
+		_array = newArray;
 	}
 
 	public T Get(int index)
@@ -64,7 +73,14 @@ public class DynamicArray<T>
 	
 	public void Remove(T element)
 	{
-		var index = Array.IndexOf(_array, element, 0, _size);
+		var index = -1;
+		for (var i = 0; i < _size; i++)
+		{
+			if (!EqualityComparer<T>.Default.Equals(_array[i], element)) continue;
+			
+			index = i;
+			break;
+		}
 
 		if (index >= 0)
 		{
@@ -74,12 +90,20 @@ public class DynamicArray<T>
 	
 	public bool Contains(T element)
 	{
-		return Array.IndexOf(_array, element, 0, _size) >= 0;
+		return IndexOf(element) >= 0;
 	} 
 	
 	public int IndexOf(T element)
 	{
-		return Array.IndexOf(_array, element, 0, _size);
+		for (var i = 0; i < _size; i++)
+		{
+			if (EqualityComparer<T>.Default.Equals(_array[i], element))
+			{
+				return i;
+			}
+		}
+
+		return -1;
 	}
 	
 	public int Size()

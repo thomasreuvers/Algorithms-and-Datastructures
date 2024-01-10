@@ -1,4 +1,5 @@
-﻿using BenchmarkDotNet.Running;
+﻿using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Running;
 using Log.Benchmarks;
 
 namespace Log;
@@ -11,7 +12,7 @@ public static class Program
 		// BenchmarkRunner.Run(typeof(BaseBenchmark).Assembly);
 		
 		// Choose which set of benchmarks to run:
-		var switcher = BenchmarkSwitcher.FromAssembly(typeof(BaseBenchmark).Assembly);
-		switcher.Run(args);
+		var switcher = BenchmarkSwitcher.FromAssembly(typeof(IBenchmark).Assembly);
+		switcher.Run(args , new DebugInProcessConfig());
 	}
 }

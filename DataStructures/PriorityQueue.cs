@@ -3,19 +3,31 @@ namespace DataStructures;
 public class PriorityQueue<T>(Func<T, T, int> comparer, int capacity = 10)
 {
 	private T[] _heap = new T[capacity];
-	private int _size = 0;
+	private int _size;
 
 	public void Add(T element)
 	{
 		if(_size == _heap.Length)
 		{
-			Array.Resize(ref _heap, _heap.Length * 2);
+			Resize();
 		}
 		
 		_heap[_size] = element;
 		_size++;
 		
 		HeapifyUp();
+	}
+
+	private void Resize()
+	{
+		capacity *= 2;
+		var newArray = new T[capacity];
+		for (var i = 0; i < _size; i++)
+		{
+			newArray[i] = _heap[i];
+		}
+
+		_heap = newArray;
 	}
 
 	public T Peek()
