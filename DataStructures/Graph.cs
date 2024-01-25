@@ -1,51 +1,74 @@
 #nullable disable
 namespace DataStructures;
 
-public class Edge(int toVertex, int fromVertex, int weight)
-{
-	public int ToVertex { get; set; } = toVertex;
-	public int FromVertex { get; set; } = fromVertex;
-	public int Weight { get; set; } = weight;
-}
 
 public class Graph
 {
-	private Dictionary<int, List<Edge>> _adjacencyList = new();
-	private HashSet<int> _vertices = new(); // Using a HashSet for vertices and a Dictionary for adjacency lists provides a balance between storage efficiency and efficient access. The HashSet ensures that only unique vertices are stored, which reduces memory usage. The Dictionary allows for efficient lookups of neighbors and edge weights.
-	
+	private readonly Dictionary<int, List<Edge>> _adjacencyList = new();
+
 	public void AddVertex(int vertex)
 	{
-		if(_vertices.Contains(vertex)) throw new Exception("Vertex already exists");
-
-		_vertices.Add(vertex);
-		_adjacencyList[vertex] = new List<Edge>();
+		if (!_adjacencyList.ContainsKey(vertex))
+		{
+			_adjacencyList[vertex] = new List<Edge>();
+		}
 	}
-	
+
 	public void RemoveVertex(int vertex)
 	{
-		if(!_vertices.Remove(vertex)) throw new Exception("Vertex does not exist");
-
-		foreach(var edge in _adjacencyList[vertex])
-		{
-			_adjacencyList[edge.ToVertex].Remove(edge);
-		}
+		if (!_adjacencyList.ContainsKey(vertex)) return;
 		
 		_adjacencyList.Remove(vertex);
-	}
 
-	public void AddEdge(int fromVertex, int toVertex, int weight = 0)
-	{
-		if (!_vertices.Contains(fromVertex) || !_vertices.Contains(toVertex)) return;
-		
-		var edge = new Edge(fromVertex, toVertex, weight);
-		_adjacencyList[fromVertex].Add(edge);
+		foreach (var vertices in _adjacencyList.Values)
+		{
+			vertices.RemoveAll(edge => edge.Target == vertex);
+		}
 	}
 	
-	public void RemoveEdge(int fromVertex, int toVertex)
+	public void AddEdge(int source, int target, int weight = 0)
 	{
-		if (_adjacencyList.TryGetValue(fromVertex, out var value))
+		if (_adjacencyList.ContainsKey(source) && _adjacencyList.ContainsKey(target))
 		{
-            value.RemoveAll(edge => edge.ToVertex == toVertex);
+			var edge = new Edge(target, weight);
+			_adjacencyList[source].Add(edge);
 		}
+		else
+		{
+			throw new ArgumentException("Source or target vertex does not exist");
+		}
+	}
+	
+	public void RemoveEdge(int source, int target)
+	{
+		if (_adjacencyList.ContainsKey(source))
+		{
+			_adjacencyList[source].RemoveAll(edge => edge.Target == target);
+		}
+	}
+
+	public List<int> GetEdges(int vertex)
+	{
+		return !_adjacencyList.ContainsKey(vertex) ? null : _adjacencyList[vertex].Select(edge => edge.Target).ToList();
+	}
+	
+	public int GetWeight(int source, int target)
+	{
+		if (!_adjacencyList.ContainsKey(source)) return -1;
+		
+		var edge = _adjacencyList[source].Find(e => e.Target == target);
+
+		return edge?.Weight ?? -1;
+	}
+
+	public int GetVertex(int vertex)
+	{
+		return _adjacencyList.ContainsKey(vertex) ? vertex : -1;
+	}
+
+	private class Edge(int target, int weight)
+	{
+		public int Target { get; } = target;
+		public int Weight { get; } = weight;
 	}
 }

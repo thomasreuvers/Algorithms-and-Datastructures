@@ -1,4 +1,10 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f0352238_002D2896_002D49f6_002D934d_002D9f224c9fadfa/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Can_Read_DataSet" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;Project Location="/Users/thomasreuvers/Documents/schoolProjects/Algorithms-and-Datastructures/Tests" Presentation="&amp;lt;Tests&amp;gt;" /&gt;
+	
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a65ff672_002D570e_002D48b1_002Dac88_002D78d1b6da7bc2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Read_Weighted_Adjacency_List #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::6BD37306-93B9-4CF1-98D1-5CA66E01F960::net8.0::Tests.Datastructures.GraphTests&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::6BD37306-93B9-4CF1-98D1-5CA66E01F960::net8.0::Tests.Datastructures.AVLTreeTests&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::6BD37306-93B9-4CF1-98D1-5CA66E01F960::net8.0::Tests.Algorithms.DijkstraTests&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

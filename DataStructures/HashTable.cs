@@ -1,47 +1,86 @@
+#nullable disable
 namespace DataStructures;
 
-public class HashTable<T>
+public class HashTable<T>(int defaultCapacity = 10)
 {
-	private readonly List<KeyValuePair<string, T>> _table = new();
-	
-	private int Hash(string key)
-	{
-		return key.GetHashCode() % _table.Count;
-	}
+    private readonly LinkedList<KeyValuePair<string, T>>[] _buckets = new LinkedList<KeyValuePair<string, T>>[defaultCapacity];
 
-	public void Insert(string key, T value)
-	{
-		var index = Hash(key);
-		var keyValue = new KeyValuePair<string, T>(key, value);
-		_table[index] = keyValue;
-	}
+    public int Hash(string key)
+    {
+        return Math.Abs(key.GetHashCode()) % _buckets.Length;
+    }
 
-	public T Get(string key)
-	{
-		var index = Hash(key);
-		
-		if (_table[index].Key.Equals(key))
-		{
-			return _table[index].Value;
-		}
-		
-		throw new KeyNotFoundException("Key not found");
-	}
-
-	public void Delete(string key)
-	{
-		var index = Hash(key);
-		if (!_table[index].Key.Equals(key)) throw new KeyNotFoundException("Key not found");
-		
-		_table.RemoveAt(index);
-	}
-
-	public void Update(string key, T newValue)
-	{
-		var index = Hash(key);
-		
-		if (!_table[index].Key.Equals(key)) throw new KeyNotFoundException("Key not found");
-		
-		_table[index] = new KeyValuePair<string, T>(key, newValue);
-	}
+    public void Insert(string key, T value)
+    {
+        var x = key.GetHashCode();
+        var hash = Hash(key);
+        
+        _buckets[hash] ??= new LinkedList<KeyValuePair<string, T>>();
+        
+        _buckets[hash].AddLast(new KeyValuePair<string, T>(key, value));
+    }
+    
+    public T Get(string key)
+    {
+        var hash = Hash(key);
+        
+        if (_buckets[hash] != null)
+        {
+            foreach (var item in _buckets[hash])
+            {
+                if (item.Key.Equals(key))
+                {
+                    return item.Value;
+                }
+            }
+        }
+        
+        throw new KeyNotFoundException("Key not found in the hashtable");
+    }
+    
+    public void Delete(string key)
+    {
+        var hash = Hash(key);
+        
+        if (_buckets[hash] != null)
+        {
+            var currentNode = _buckets[hash].First;
+            
+            while (currentNode != null)
+            {
+                if (currentNode.Value.Key.Equals(key))
+                {
+                    _buckets[hash].Remove(currentNode);
+                    return;
+                }
+                
+                currentNode = currentNode.Next;
+            }
+        }
+        
+        throw new KeyNotFoundException("Key not found in the hashtable");
+    }
+    
+    public void Update(string key, T newValue)
+    {
+        var hash = Hash(key);
+        
+        if (_buckets[hash] != null)
+        {
+            for (var i = 0; i < _buckets[hash].Count; i++)
+            {
+                var item = _buckets[hash].ElementAt(i);
+                
+                if (item.Key.Equals(key))
+                {
+                    var updatedItem = new KeyValuePair<string, T>(key, newValue);
+                    _buckets[hash].Remove(item);
+                    _buckets[hash].AddLast(updatedItem);
+                    return;
+                }
+            }
+        }
+        
+        throw new KeyNotFoundException("Key not found in the hashtable");
+    }
 }

@@ -12,6 +12,10 @@
         <EmbeddedResource Include="Data\dataset_sorteren.json">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </EmbeddedResource>
+        <None Remove="Data\dataset_grafen.json" />
+        <EmbeddedResource Include="Data\dataset_grafen.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
