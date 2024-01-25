@@ -96,7 +96,7 @@ public class AVLTree <T> where T : IComparable<T>
 		return node;
 	}
 	
-	   public void Insert(T value)
+	public void Insert(T value)
     {
         _root = Insert(_root, value);
     }

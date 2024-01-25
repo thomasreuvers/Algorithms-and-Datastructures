@@ -3,7 +3,7 @@ namespace Algorithms;
 public class Dijkstra
 {
 	// Dijkstra's algorithm for unweighted graph
-    static int[] DijkstraUnweighted(int[,] graph, int start)
+    public static int[] DijkstraUnweighted(int[,] graph, int start)
     {
         var n = graph.GetLength(0);
         var distances = new int[n];
@@ -34,7 +34,7 @@ public class Dijkstra
         return distances;
     }
     
-    static int[] DijkstraWeighted(int[,] graph, int start)
+    public static int[] DijkstraWeighted(int[,] graph, int start)
     {
         var n = graph.GetLength(0);
         var distances = new int[n];
@@ -66,7 +66,7 @@ public class Dijkstra
     }
 
     // Helper function to find the vertex with the minimum distance value
-    static int MinDistance(int[] distances, bool[] visited)
+    public static int MinDistance(int[] distances, bool[] visited)
     {
         var min = int.MaxValue;
         var minIndex = -1;
